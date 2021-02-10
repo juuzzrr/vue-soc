@@ -20,10 +20,10 @@
         </v-list-item-avatar>
         <v-list-item-content class="text-left">
           <v-list-item-title class="font-weight-black">
-            ЛОХ
+            рандом
           </v-list-item-title>
           <v-list-item-subtitle>
-            ЛОХОВИЧ
+            рандомович
           </v-list-item-subtitle>
         </v-list-item-content>
 
@@ -38,23 +38,30 @@
         <v-list-item-title class="text-left">Главная</v-list-item-title>
       </v-list-item>
 
-      <v-list-item link to="/acc" exact>
+      <v-list-item link to="/acc/1" exact>
         <v-list-item-icon>
           <v-icon>mdi-account-outline</v-icon>
         </v-list-item-icon>
         <v-list-item-title class="text-left">Мой профиль</v-list-item-title>
       </v-list-item>
-      </v-list>
+
+      <v-list-item link to="/log" exact>
+        <v-list-item-icon>
+          <v-icon>mdi-account-circle-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title class="text-left">Войти</v-list-item-title>
+      </v-list-item>
+
+</v-list>
     
     </v-navigation-drawer>
 
 
     <v-content class="px-12 py-3" >
       <v-container fluid>
-        <router-view/>
+        <router-view v-on:login="updateUser" />
       </v-container>
     </v-content>
-
   </v-app>
 </template>
 
@@ -66,6 +73,11 @@ export default {
     nav:true,
     profile: null,
   }),
+  methods: {
+    updateUser(){
+        
+    }
+  },
 };
 </script>
 <style>

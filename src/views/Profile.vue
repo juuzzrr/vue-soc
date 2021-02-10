@@ -73,14 +73,14 @@ export default{
     },
     methods: {
         user(){
-            this.axios.get("http://jsonplaceholder.typicode.com/users/5")
+            this.axios.get(`http://jsonplaceholder.typicode.com/users/${this.$route.params.id}`)
             .then( (response)=>{
                 this.pst=response.data;
                 this.adr=response.data.address;
                 this.com=response.data.company;
                 }
             ),
-            this.axios.get("http://jsonplaceholder.typicode.com/posts?userId=5")
+            this.axios.get(`http://jsonplaceholder.typicode.com/posts?userId=${this.$route.params.id}`)
             .then( (response)=>{
                 this.post=response.data;
                 }
@@ -90,6 +90,11 @@ export default{
     mounted(){
         this.user();
     },
+    watch:{
+        $route(){
+            this.user();
+        }
+    }
 }
 </script>
 <style>
