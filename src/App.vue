@@ -45,13 +45,6 @@
         <v-list-item-title class="text-left">Мой профиль</v-list-item-title>
       </v-list-item>
 
-      <v-list-item link to="/log" exact>
-        <v-list-item-icon>
-          <v-icon>mdi-account-circle-outline</v-icon>
-        </v-list-item-icon>
-        <v-list-item-title class="text-left">Войти</v-list-item-title>
-      </v-list-item>
-
       <v-list-item link to="/addfr" exact>
         <v-list-item-icon>
           <v-icon>mdi-account-multiple-plus-outline</v-icon>

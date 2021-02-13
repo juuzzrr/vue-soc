@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Profile from '../views/Profile.vue'
 import Home from '../views/Home.vue'
-import Log from '../views/Log.vue'
 import AddFriend from '../views/AddFriend.vue'
 
 Vue.use(VueRouter)
@@ -17,11 +16,6 @@ const routes = [
     path: '/user/:id',
     name: 'acc',
     component: Profile
-  },
-  {
-    path: '/log',
-    name: 'log',
-    component: Log
   },
   {
     path: '/addfr',
