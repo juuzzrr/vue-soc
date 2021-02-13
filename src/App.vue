@@ -16,14 +16,14 @@
       >
       <v-list-item two-line >
         <v-list-item-avatar >
-          <img src="https://randomuser.me/api/portraits/women/48.jpg">
+           <img v-bind:src=" `https://randomuser.me/api/portraits/men/${ $store.state.userData.id }.jpg` ">
         </v-list-item-avatar>
         <v-list-item-content class="text-left">
           <v-list-item-title class="font-weight-black">
-            рандом
+            {{title}}
           </v-list-item-title>
           <v-list-item-subtitle>
-            рандомович
+            {{$store.state.userData.name}}
           </v-list-item-subtitle>
         </v-list-item-content>
 
@@ -38,7 +38,7 @@
         <v-list-item-title class="text-left">Главная</v-list-item-title>
       </v-list-item>
 
-      <v-list-item link to="/acc/1" exact>
+      <v-list-item link to="/user/1" exact>
         <v-list-item-icon>
           <v-icon>mdi-account-outline</v-icon>
         </v-list-item-icon>
@@ -50,6 +50,13 @@
           <v-icon>mdi-account-circle-outline</v-icon>
         </v-list-item-icon>
         <v-list-item-title class="text-left">Войти</v-list-item-title>
+      </v-list-item>
+
+      <v-list-item link to="/addfr" exact>
+        <v-list-item-icon>
+          <v-icon>mdi-account-multiple-plus-outline</v-icon>
+        </v-list-item-icon>
+        <v-list-item-title class="text-left">Друзья</v-list-item-title>
       </v-list-item>
 
 </v-list>
@@ -72,6 +79,7 @@ export default {
   data: () => ({
     nav:true,
     profile: null,
+    title: 'SocialLink',
   }),
   methods: {
     updateUser(){
