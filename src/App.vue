@@ -38,7 +38,7 @@
         <v-list-item-title class="text-left">Главная</v-list-item-title>
       </v-list-item>
 
-      <v-list-item link to="/user/1" exact>
+      <v-list-item link :to="{path: `/user/${$store.state.userData.id}`}" exact>
         <v-list-item-icon>
           <v-icon>mdi-account-outline</v-icon>
         </v-list-item-icon>
